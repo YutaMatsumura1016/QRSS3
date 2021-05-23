@@ -40,6 +40,7 @@ import java.util.List;
 
 public class readActivity extends AppCompatActivity {
 
+    String readingString;
     SoundPool soundPool;
     int soundpi;
     String idmString;
@@ -56,6 +57,10 @@ public class readActivity extends AppCompatActivity {
         //ゲートの引継ぎ
         Intent intent = getIntent();
         gate = intent.getStringExtra("gate");
+
+        readingString = "読み取り中(" + gate + "キャンパス)";
+        TextView nowReading = (TextView) findViewById(R.id.nowReading);
+        nowReading.setText(readingString);
 
         //nfcAdapter初期化
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
@@ -198,6 +203,10 @@ public class readActivity extends AppCompatActivity {
                     barcodeView = (CompoundBarcodeView) findViewById(R.id.barcodeView);
                     barcodeView.resume();
                     barcodeReader();
+
+                    //読み取りキャンパスの再設定
+                    TextView nowReading = (TextView) findViewById(R.id.nowReading);
+                    nowReading.setText(readingString);
                 }
             });
 
