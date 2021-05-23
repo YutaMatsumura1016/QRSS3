@@ -8,33 +8,19 @@ import android.media.AudioAttributes;
 import android.media.SoundPool;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
-import android.nfc.tech.NfcF;
 import android.os.Build;
 import android.os.Bundle;
-
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import com.google.zxing.ResultPoint;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 import com.journeyapps.barcodescanner.BarcodeCallback;
 import com.journeyapps.barcodescanner.BarcodeResult;
 import com.journeyapps.barcodescanner.CompoundBarcodeView;
-import com.journeyapps.barcodescanner.camera.CameraSettings;
-
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -52,11 +38,18 @@ public class readActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_read);
 
         //ゲートの引継ぎ
         Intent intent = getIntent();
         gate = intent.getStringExtra("gate");
+
+        if(gate.equals("早稲田")){
+            setTheme(R.style.Waseda);
+        }else if(gate.equals("戸山")){
+            setTheme(R.style.Toyama);
+        }
+
+        setContentView(R.layout.activity_read);
 
         readingString = "読み取り中(" + gate + "キャンパス)";
         TextView nowReading = (TextView) findViewById(R.id.nowReading);
