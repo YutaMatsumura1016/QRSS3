@@ -3,4 +3,6 @@
     <string name="firstText">IDを読み取るツノ！</string>
     <string name="waseda">早稲田</string>
     <string name="toyama">戸 山</string>
+    <string name="login">ログイン</string>
+    <string name="close">閉じる</string>
 </resources>

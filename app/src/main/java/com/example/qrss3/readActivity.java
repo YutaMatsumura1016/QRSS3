@@ -89,6 +89,7 @@ public class readActivity extends AppCompatActivity {
                 WebView myWebView = (WebView) findViewById(R.id.webView1);
                 String sentURL = "https://script.google.com/a/wasedasai.net/macros/s/AKfycbw9BMWL3BLRhB8ZlIs32scTBWceP0TYy28wnWtBD2btOatmNiiw/exec?idm=" + idmString + "&&gate=" + gate;
 
+
                 //GASに送信、結果が帰ってきたら次の読み込み開始
 
                 myWebView.setWebViewClient(new WebViewClient() {

@@ -9,7 +9,7 @@
 
     <!--app:background~をいれるとdrawable/button_formの色が反映される-->
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/Sai"
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_marginTop="50dp"
@@ -44,6 +44,41 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="104dp"
+        android:layout_height="50dp"
+        android:text="@string/login"
+        android:textSize="15sp"
+        app:backgroundTint="#666666"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <Button
+        android:id="@+id/buttonCloseweb"
+        android:layout_width="104dp"
+        android:layout_height="50dp"
+        android:text="@string/close"
+        android:textSize="15sp"
+        app:backgroundTint="#666666"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976"
+        android:visibility="invisible"/>
+
+    <WebView
+        android:id="@+id/webView2"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:visibility="invisible"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
